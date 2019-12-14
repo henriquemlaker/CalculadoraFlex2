@@ -35,4 +35,6 @@ dependencies {
 
     //implementation Google Material
     implementation 'com.google.android.material:material:1.0.0'
+    //implementation Stetho
+    implementation 'com.facebook.stetho:stetho:1.5.1'
 }
