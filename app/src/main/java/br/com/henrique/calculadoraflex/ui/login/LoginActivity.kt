@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import br.com.henrique.calculadoraflex.R
 import br.com.henrique.calculadoraflex.ui.form.FormActivity
+import br.com.henrique.calculadoraflex.ui.signup.SignUpActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -35,6 +36,13 @@ class LoginActivity : AppCompatActivity() {
                     ).show()
                 }
             }
+        }
+
+        btSignup.setOnClickListener {
+            startActivityForResult(
+                Intent(this, SignUpActivity::class.java),
+                NEW_USER_REQUEST
+            )
         }
 
     }

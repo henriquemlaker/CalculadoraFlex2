@@ -38,6 +38,7 @@ class SignUpActivity : AppCompatActivity() {
             inputName.text.toString(), inputEmail.text.toString(),
             inputPhone.text.toString()
         )
+
         FirebaseDatabase.getInstance().getReference("Users")
             .child(FirebaseAuth.getInstance().currentUser!!.uid)
             .setValue(user)
