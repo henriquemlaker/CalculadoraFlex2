@@ -14,13 +14,13 @@ class DecimalTextWatcher(editText: EditText, val totalDecimalNumber: Int = 2) :
         WeakReference(editText)
 
     init {
-        formatNumber(editTextWeakReference.get()!!.text.toString())
+        formatNumber(editTextWeakReference.get()!!.text)
     }
 
     override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
     override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
     override fun afterTextChanged(editable: Editable) {
-        formatNumber(editable.toString())
+        formatNumber(editable)
     }
 
     private fun getTotalDecimalNumber(): String {

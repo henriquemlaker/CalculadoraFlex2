@@ -19,7 +19,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onNewToken(s: String?) {
         super.onNewToken(s)
-        //DatabaseUtils.
+        DatabaseUtil.saveToken(s)
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
