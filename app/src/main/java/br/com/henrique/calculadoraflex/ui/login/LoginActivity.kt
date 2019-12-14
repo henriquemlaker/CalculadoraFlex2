@@ -49,15 +49,20 @@ class LoginActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        when(requestCode) {
-            NEW_USER_REQUEST ->{
-                inputLoginEmail.setText(data?.getStringExtra("email"))
+        when (requestCode) {
+            NEW_USER_REQUEST -> {
+                when (requestCode) {
+                    Activity.RESULT_OK -> {
+                        inputLoginEmail
+                            .setText(data?.getStringExtra("email"))
+                    }
+                }
+            }
+            else -> {
             }
         }
 
-        //if (requestCode == NEW_USER_REQUEST && resultCode == Activity.RESULT_OK) {
-            //inputLoginEmail.setText(data?.getStringExtra("email"))
-        //}
+
     }
 
 }
